@@ -1,0 +1,41 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+#Set default line ending to LF.
+* text eol=lf
+
+#Text types
+*.js text
+*.css text
+*.hbs text
+*.svg text
+*.xml text
+*.json text
+*.less text
+
+#Binary types
+*.doc binary
+*.docx binary
+*.dotx binary
+*.jpeg binary
+*.jpg binary
+*.odt binary
+*.pdf binary
+*.png binary
+*.rtf binary
+*.tif binary
+*.tiff binary
+*.txt binary
+*.xls binary
+*.xlsx binary
+*.xltx binary
+*.xps binary
+*.pdf binary
+*.png binary
+*.jpg binary
+*.eot binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.exe binary
+chromedriver binary

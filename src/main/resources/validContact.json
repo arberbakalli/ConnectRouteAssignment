@@ -1,0 +1,8 @@
+{
+  "firstName": "Bob",
+  "lastName": "John",
+  "mobile": "+306984512555",
+  "country":"gr",
+  "vip": "true" ,
+  "email" : "bob@example.com"
+}

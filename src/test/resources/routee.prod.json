@@ -1,0 +1,25 @@
+{
+  "environment": "prod",
+  "base_url": "https://connect.routee.net",
+  "authentication_url": "https://auth.routee.net/oauth/token",
+  "users": [
+    {
+      "id": "admin_arber",
+      "tenant": "Arber Bakalli",
+      "application_id": "606f46e3e12c740001434928",
+      "application_secret": "LUfDrdHyYG"
+    },
+    {
+      "id": "test_user",
+      "tenant": "John Wick",
+      "application_id": "123x456y789z101112k12345",
+      "application_secret": "7/K-R8DZf7LV_t%R"
+    },
+    {
+      "id": "normal_user",
+      "tenant": "Santa Clause",
+      "application_id": "",
+      "application_secret": ""
+    }
+  ]
+}

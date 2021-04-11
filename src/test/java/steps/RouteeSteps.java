@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RouteeSteps {
 
     private Optional<MyContacts> myContacts;
-    private List<SmsAnalyzeCampaign> smsAnalyzeCampaign;
+    private Optional<SmsAnalyzeCampaign> smsAnalyzeCampaign;
 
     @Steps
     RouteeClient routeeClient;
@@ -37,5 +37,21 @@ public class RouteeSteps {
         assertThat(myContacts.get().isVip()).isTrue();
         assertThat(myContacts.get().getEmail()).isNotEmpty();
         assertThat(myContacts.get().getLabels()).isEmpty();
+    }
+
+    public void createValidSmsCampaign(JsonObject userPayload) {
+        routeeClient.createSmsCampaign(userPayload);
+    }
+
+    public void verifySmsCampaignCreated() {
+        smsAnalyzeCampaign = Optional.ofNullable(SerenityRest.lastResponse().jsonPath().getObject("", SmsAnalyzeCampaign.class));
+        assertThat(smsAnalyzeCampaign.isPresent()).isTrue();
+        assertThat(smsAnalyzeCampaign.get().getBodyAnalysis()).isNotNull();
+        assertThat(smsAnalyzeCampaign.get().getRecipientsPerCountry()).isNotNull();
+        assertThat(smsAnalyzeCampaign.get().getRecipientsPerGroup()).isNotNull();
+        assertThat(smsAnalyzeCampaign.get().getRecipientCountries()).isNotNull();
+        assertThat(smsAnalyzeCampaign.get().getTotalInGroups()).isZero();
+        assertThat(smsAnalyzeCampaign.get().getContacts()).isNotNull();
+        assertThat(smsAnalyzeCampaign.get().getNumberOfRecipients()).isNotZero();
     }
 }

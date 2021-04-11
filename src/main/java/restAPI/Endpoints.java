@@ -7,7 +7,8 @@ import lombok.experimental.FieldDefaults;
 public enum Endpoints {
 
 
-    CONTACTS("Can create get and delete a contact give the right parameters","/contacts/my");
+    CONTACTS("Can create get and delete a contact give the right parameters","/contacts/my"),
+    SMSCAMPAIGN("Description of business logic about sms and campaigns","/sms/analyze/campaign");
 
     String summary;
     String path;

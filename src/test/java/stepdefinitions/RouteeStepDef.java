@@ -36,9 +36,11 @@ public class RouteeStepDef {
     @When("I send a valid sms")
     public void iSendAValidSms() throws IOException {
         userPayload = EnvironmentController.getJsonObject("validSmsCampaign");
+        routeeSteps.createValidSmsCampaign(userPayload);
     }
 
     @Then("I should see a valid sms confirmation")
     public void iShouldSeeAValidSmsConfirmation() {
+        routeeSteps.verifySmsCampaignCreated();
     }
 }

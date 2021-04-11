@@ -22,4 +22,12 @@ public class RouteeClient {
                 .body(data)
                 .post(baseURL + Endpoints.CONTACTS.getPath());
     }
+
+    public void createSmsCampaign(JsonObject data) {
+        SerenityRest.given()
+                .header("Content-Type", "application/json")
+                .header("Authorization", bearerToken)
+                .body(data)
+                .post(baseURL + Endpoints.SMSCAMPAIGN.getPath());
+    }
 }
